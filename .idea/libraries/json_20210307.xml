@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="json-20210307">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../spshackathon21/JAVA/LIB/json-20210307.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../LIB/json-20210307.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../LIB/json-20210307.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
