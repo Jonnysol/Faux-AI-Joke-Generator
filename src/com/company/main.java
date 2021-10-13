@@ -12,6 +12,11 @@ import java.util.concurrent.TimeUnit;
 public class main {
 
 
+    private static String name;
+
+    private static final String[] genre = {"Any", "Misc", "Dark", "Pun", "Spooky", "Christmas"};
+    private static final Scanner sc = new Scanner(System.in);
+
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
@@ -35,15 +40,21 @@ public class main {
     }
 
     public static void main(String[] args) throws IOException, JSONException, InterruptedException {
-        Scanner sc = new Scanner(System.in);
 
-        String[] genre = {"Any", "Misc", "Dark", "Pun", "Spooky", "Christmas"};
+
+
 
         System.out.println("Hey, Whats Your name, Buccko?");
-        String name = sc.nextLine();
+        name = sc.nextLine();
         System.out.println("Well, " + name + " Welcome To The Virtual Comedy Club?");
         TimeUnit.SECONDS.sleep(3);
-        System.out.println("What rocks your boat " + name + " ? Enter the number associated to the genre are you into ? ");
+        System.out.println("What rocks your boat " + name + " ? "); ask();
+
+
+    }
+    public static void ask() throws IOException, InterruptedException {
+
+    System.out.println(" Enter the number associated to the genre are you into ? ");
         TimeUnit.SECONDS.sleep(4);
         System.out.println("""
                 1-Any\r
@@ -79,6 +90,10 @@ public class main {
             }
             System.out.println(json.get("joke") + "\n" + " 'Press Enter.' ");
             next = sc.nextLine();
+            if(next.equals("change")){
+                ask();
+                break;
+            }
             json = readJsonFromUrl(uniURL);
 
         }
